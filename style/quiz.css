@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --text: #160C09;
+    --background: #F6F1EF;
+    --primary: #283A43;
+    --secondary: #ECE3DF;
+    --accent: #3B89AB;
+}
+
+* {
+    margin: 0rem;
+    padding: 0rem;
+
+    border: none;
+    outline: none;
+
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    display: grid;
+    grid-template-columns: minmax(128px, 1256px);
+    justify-content: center;
+}
+
+h1 {
+    margin: 24px 0px 24px 0px;
+
+    text-align: center;
+
+    font-size: 24px;
+}
+
+
+
+
+header {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.questionCon {
+    grid-row: 1 /span 2;
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.questionCon img {
+    aspect-ratio: 4/3;
+
+    border-radius: 8px;
+    border: 1px solid var(--primary);
+
+    background-color: var(--primary);
+}
+
+.questionController {
+    grid-column: 1;
+    grid-row: 3;
+
+    padding: 4px;
+
+    border-radius: 8px;
+    border: 1px solid var(--primary);
+
+    display: flex;
+    gap: 4px;
+}
+
+.questionController button {
+    flex: 1;
+
+    padding: 8px 12px;
+
+    border-radius: 4px;
+
+    background-color: var(--secondary);
+
+    display: grid;
+    place-content: center;
+}
+
+
+
+
+.questionMetaCon {
+    grid-column: 2 /span 2;
+    display: flex;
+}
+
+.questionHeader {
+    grid-column: 2 /span 2;
+}
+
+.questionHeader p {
+    font-size: 14px;
+    color: var(--primary);
+}
+
+.questionHeader h2 {
+    font-size: 16px;
+    color: var(--text);
+}
