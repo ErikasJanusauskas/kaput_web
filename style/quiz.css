@@ -6,6 +6,7 @@
     --primary: #283A43;
     --secondary: #ECE3DF;
     --accent: #3B89AB;
+    --hover: #D9C7BF;
 }
 
 * {
@@ -23,27 +24,83 @@ body {
     display: grid;
     grid-template-columns: minmax(128px, 1256px);
     justify-content: center;
+    gap: 24px;
 }
+
+
+
+
 
 h1 {
     margin: 24px 0px 24px 0px;
 
     text-align: center;
 
-    font-size: 24px;
+    font-size: 20px;
+    font-weight: 600;
 }
 
 
 
 
 header {
+    margin-top: 48px;
+
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: .4fr 1fr max-content;
     gap: 8px;
+}
+
+.questionHeader {
+    grid-column: 2 /span 2;
+    grid-row: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.questionHeader h2 {
+    font-size: 16px;
+    color: var(--text);
+}
+
+.questionHeader p {
+    font-size: 14px;
+    color: var(--primary);
+}
+
+form {
+    grid-column: 2 /span 2;
+    grid-row: 2;
+
+    display: grid;
+    grid-template-columns: repeat(2 , 1fr);
+    grid-template-rows: repeat(2 , 1fr);
+    gap: 8px;
+}
+
+form button {
+    padding: 20px 24px;
+
+    border-radius: 8px;
+
+    background-color: var(--secondary);
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+form button:hover {
+    cursor: pointer;
+    background-color: var(--hover);
 }
 
 .questionCon {
     grid-row: 1 /span 2;
+    margin-right: 16px;
 
     display: flex;
     flex-direction: column;
@@ -61,7 +118,7 @@ header {
 
 .questionController {
     grid-column: 1;
-    grid-row: 3;
+    margin-right: 16px;
 
     padding: 4px;
 
@@ -85,24 +142,44 @@ header {
     place-content: center;
 }
 
-
+.questionController button:hover {
+    cursor: pointer;
+    background-color: var(--hover);
+}
 
 
 .questionMetaCon {
     grid-column: 2 /span 2;
+
     display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.questionHeader {
-    grid-column: 2 /span 2;
-}
-
-.questionHeader p {
+.questionMetaCon a {
     font-size: 14px;
+
+    text-decoration: underline;
+
     color: var(--primary);
 }
 
-.questionHeader h2 {
-    font-size: 16px;
+.questionMetaCon div {
+    display: flex;
+    gap: 24px;
+}
+
+.questionMetaCon div p {
+    font-size: 14px;
     color: var(--text);
+}
+
+
+
+
+.markedQuestions {
+    margin-top: 48px;
+
+    display: flex;
+    gap: 16px;
 }
