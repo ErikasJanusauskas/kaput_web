@@ -20,5 +20,5 @@ from django.urls import include
 from . import views
 
 urlpatterns = [
-    path('', views.testfunc, name="testfunc"),
+    path('', views.homepage, name="homepage"),
 ]
