@@ -21,4 +21,5 @@ from . import views
 
 urlpatterns = [
     path('', views.homepage, name="homepage"),
+    path('/<int:pk>', views.QuestionsDetailView.as_view(), name="question-page") 
 ]
