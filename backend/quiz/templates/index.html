@@ -9,11 +9,11 @@
     <!-- {{ questions }} -->
     <h1>{{ question.title }}</h1>
     <p>{{ question.answer_1 }}</p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
+    {% if userData%}
+        {% for info in userData%}
+        <p>{{info}}</p>
+        {% endfor %}
+    {% endif %}
     <p></p>
 </body>
 </html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="{% url 'getform' %}" method="post">
+        {% csrf_token %}
+        <p>first name:</p>
+        <input type="text" name="fistName" id="">
+        <p>second name:</p>
+        <input type="text" name="lasName" id="">
+        <p>password:</p>
+        <input type="password" name="password" id="">
+        <p>confirm password:</p>
+        <input type="password" name="password_confirm" id="">
+        <p>email:</p>
+        <input type="email" name="email" id="">
+        <input type="submit" value="create">
+    </form>
+</body>
+</html>

@@ -21,5 +21,8 @@ from . import views
 
 urlpatterns = [
     path('', views.homepage, name="homepage"),
-    path('/<int:pk>', views.QuestionsDetailView.as_view(), name="question-page") 
+    path('/<int:pk>', views.QuestionsDetailView.as_view(), name="question-page"),
+    path('/dbtest', views.dbtest, name="dbtest"),
+    path('/authtest', views.authtest, name="authtest"),
+    path('/getform', views.getform, name="getform"),
 ]
