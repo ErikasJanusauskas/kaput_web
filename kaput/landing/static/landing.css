@@ -1,0 +1,22 @@
+header {
+    margin: 1rem 0rem;
+
+    display: flex;
+    justify-content: center;
+}
+
+
+.pageTitle {
+    gap: .4rem;
+}
+
+
+h1 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.quiz {
+    font-size: 24px;
+    font-weight: 700;
+}

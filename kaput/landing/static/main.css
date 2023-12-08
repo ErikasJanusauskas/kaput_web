@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+
+:root {
+    --text: #081F26;
+    --text-secondary: #767D7F;
+    --background: #F5F4F3;
+    --primary: #F5F4F3;
+    --secondary: #081F26;
+    --border: #CCCDCF;
+    --ans1: #EF476F;
+    --ans2: #F66951;
+    --ans3: #E873D8;
+    --ans4: #60C7E6;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+
+    border: none;
+
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+}
+
+
+body {
+    max-width: 1256px;
+    margin: 0rem auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+
+nav {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.wrapper {
+    display: flex;
+}
+
+
+.feed {
+    gap: 1rem;
+}
+
+
+.card {
+    flex: .25;
+    padding: .5rem;
+    border-radius: .8rem;
+    border: .063rem solid var(--border);
+}
+
+.card:hover {
+    background: var(--primary);
+}
+
+
+.quizImg {
+    aspect-ratio: 16/9;
+    border-radius: .5rem;
+
+    background: #081F26;
+}
+
+
+.quizTitle {
+    margin: .5rem .25rem;
+    height: 3rem;
+
+    font-size: 1rem;
+    color: var(--text);
+}
+
+
+.label {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+
+.meta {
+    font-size: 14px;
+    color: var(--text);
+}
