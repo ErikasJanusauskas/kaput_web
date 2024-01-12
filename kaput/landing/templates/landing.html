@@ -1,9 +1,44 @@
 {% extends 'base.html' %}
 
-{% block header %}
-    <h1>Landing</h1>
+
+{% block style %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'landing.css' %}">
 {% endblock %}
 
+
+{% block header %}
+    <div class="wrapper pageTitle">
+        <h1>Play a Kaput</h1>
+        <div class="wrapper quiz">
+            <span style="color: var(--ans1);">Q</span>
+            <span style="color: var(--ans2);">u</span>
+            <span style="color: var(--ans3);">i</span>
+            <span style="color: var(--ans4);">z</span>
+        </div>
+    </div>
+{% endblock %}
+
+
 {% block content %}
-    
+    <div class="feed">
+
+        <a class="container card" href="">
+            <img class="quizImg" src="" alt="">
+            <h2 class="quizTitle">Title of the quiz</h2>
+
+            <div class="wrapper" style="margin: 0rem .25rem;">
+                <div class="container" style="flex: .5;">
+                    <p class="label">Questions</p>
+                    <p class="meta">10</p>
+                </div>
+
+                <div class="container" style="flex: .5;">
+                    <p class="label">Time limit</p>
+                    <p class="meta">15</p>
+                </div>
+            </div>
+        </a>
+
+    </div>
 {% endblock %}
