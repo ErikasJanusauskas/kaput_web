@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block header %}
+
+    <div class="quizContainer">
+        <img class="quizImg" src="" alt="img">
+
+        <div class="quiz">
+            <div class="question">
+                <p>Question</p>
+            </div>
+
+            <a class="answer ans1" href="">answer 1</a>
+            <a class="answer ans2" href="">answer 2</a>
+            <a class="answer ans3" href="">answer 3</a>
+            <a class="answer ans4" href="">answer 4</a>
+        </div>
+
+        <div class="wrapper quizControlls">
+            <a class="btn ctrlBtn" href="">back</a>
+            <a class="btn ctrlBtn" href="">mark</a>
+            <a class="btn ctrlBtn" href="">next</a>
+        </div>
+
+
+        <div class="wrapper quizMetaContainer">
+            <a class="btn" href="">View all questions</a>
+
+            <div class="wrapper quizData">
+                <p>43/64</p>
+                <p>35min</p>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
