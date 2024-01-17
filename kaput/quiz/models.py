@@ -17,7 +17,7 @@ class Questions(models.Model):
     answer_2     = models.TextField     ('answer_2')
     answer_3     = models.TextField     ('answer_3')
     answer_4     = models.TextField     ('answer_4')
-    answer_r     = models.TextField     ('answer_r')
+    answer_r     = models.IntegerField  ('answer_r')
     img_path     = models.TextField     ('img_path')
 
     def __str__(self):
