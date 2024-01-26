@@ -7,9 +7,6 @@ class Quizzes(models.Model):
     def __str__(self):
         return self.name
 
-    class Meta:
-        verbose_name = 'Quiz'
-        verbose_name_plural = 'Quizzes'
 
 class Questions(models.Model):
     quiz         = models.ForeignKey    (Quizzes, blank=True, null=True, on_delete=models.CASCADE, name='quiz')
@@ -23,8 +20,4 @@ class Questions(models.Model):
 
     def __str__(self):
         return self.name
-
-    class Meta:
-        verbose_name = 'Question'
-        verbose_name_plural = 'Questions'
 
