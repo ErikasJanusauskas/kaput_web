@@ -1,40 +1,51 @@
 {% extends 'base.html' %}
 
+
 {% block header %}
 
-    <div class="quizContainer">
-        <img class="quizImg" src="" alt="img">
+        <h4>title of the quiz</h4>
 
-        <div class="quiz">
+{% endblock %}
+
+
+{% block content %}
+
+    <!-- main div hold everything about the quiz controller togheter -->
+    <div class="quizController">
+
+        <img class="quizImg" src="" alt="">
+
+        <form class="quetion_and_answer_container" action="" id="answers">
+            {% csrf_token %}
+
             <div class="question">
                 <p>Question</p>
             </div>
-            <form action="" id="answers">
-                {% csrf_token %}
-                <label class="answer ans1" href="">answer 1 <input type="radio" name="answer" id=""> </label>
-                <label class="answer ans2" href="">answer 2 <input type="radio" name="answer" id=""> </label>
-                <label class="answer ans3" href="">answer 3 <input type="radio" name="answer" id=""> </label>
-                <label class="answer ans4" href="">answer 4 <input type="radio" name="answer" id=""> </label>
-            </form>
-        </div>
 
-        <div class="wrapper quizControlls">
-            <a class="btn ctrlBtn" href="">back</a>
+            <label class="answer ans1" href="">answer 1 <input type="radio" name="answer" id=""> </label>
+            <label class="answer ans2" href="">answer 2 <input type="radio" name="answer" id=""> </label>
+            <label class="answer ans3" href="">answer 3 <input type="radio" name="answer" id=""> </label>
+            <label class="answer ans4" href="">answer 4 <input type="radio" name="answer" id=""> </label>
+        </form>
+
+        <div class="wrapper">
+            <a href="">back</a>
+
             <form action="">
                 <label class="btn ctrlBtn" href="">mark <input type="checkbox" value="qid"></label>
                 <label class="btn ctrlBtn" href=""><input type="submit" value="next"></label>
             </form>
         </div>
 
+        <div class="wrapper quizMeta">
+            <a href="">View all questions</a>
 
-        <div class="wrapper quizMetaContainer">
-            <a class="btn" href="">View all questions</a>
-
-            <div class="wrapper quizData">
+            <div class="wrapper">
                 <p>43/64</p>
                 <p>35min</p>
             </div>
         </div>
+
     </div>
 
 {% endblock %}
