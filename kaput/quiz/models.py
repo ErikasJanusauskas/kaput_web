@@ -16,7 +16,7 @@ class Questions(models.Model):
     answer_3     = models.TextField     ('answer_3')
     answer_4     = models.TextField     ('answer_4')
     answer_r     = models.IntegerField  (validators=[MinValueValidator(1), MaxValueValidator(4)], name="answer_r")
-    img_path     = models.TextField     ('img_path')
+    img_path     = models.TextField     ('img_path', null=True, blank=True)
 
     def __str__(self):
         return self.name
