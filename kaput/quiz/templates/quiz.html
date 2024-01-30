@@ -1,51 +1,16 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
 
-
-{% block header %}
-
-        <h4>title of the quiz</h4>
-
-{% endblock %}
-
-
-{% block content %}
-
-    <!-- main div hold everything about the quiz controller togheter -->
-    <div class="quizController">
-
-        <img class="quizImg" src="" alt="">
-
-        <form class="quetion_and_answer_container" action="" id="answers">
-            {% csrf_token %}
-
-            <div class="question">
-                <p>Question</p>
-            </div>
-
-            <label class="answer ans1" href="">answer 1 <input type="radio" name="answer" id=""> </label>
-            <label class="answer ans2" href="">answer 2 <input type="radio" name="answer" id=""> </label>
-            <label class="answer ans3" href="">answer 3 <input type="radio" name="answer" id=""> </label>
-            <label class="answer ans4" href="">answer 4 <input type="radio" name="answer" id=""> </label>
-        </form>
-
-        <div class="wrapper">
-            <a href="">back</a>
-
-            <form action="">
-                <label class="btn ctrlBtn" href="">mark <input type="checkbox" value="qid"></label>
-                <label class="btn ctrlBtn" href=""><input type="submit" value="next"></label>
-            </form>
-        </div>
-
-        <div class="wrapper quizMeta">
-            <a href="">View all questions</a>
-
-            <div class="wrapper">
-                <p>43/64</p>
-                <p>35min</p>
-            </div>
-        </div>
-
-    </div>
-
-{% endblock %}
+    <ul>
+        {% for q in quiz %}
+            <li>{{ q.name }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

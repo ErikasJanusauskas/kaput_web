@@ -7,13 +7,6 @@ from .models import Quizzes, Questions
 def index(request):
     return render(request, 'quiz.html')
 
-def quizGeneral(request, quizID):
-    quiz = Quizzes.objects.get(id=quizID)
-    context = {
-        'quizName':quiz.name
-    }
-    return render(request, 'quiz.html', context)
-
 def quest(request, quizID, questID):
     quiz  = Quizzes.objects.get(id=quizID)
     quest = Questions.objects.get(id=questID)
@@ -25,3 +18,4 @@ def quest(request, quizID, questID):
         'answer_3':quest.answer_3,
         'answer_4':quest.answer_4,
     }
+    return render(request, 'question.html', context)

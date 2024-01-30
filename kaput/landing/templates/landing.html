@@ -21,23 +21,21 @@
 
 
 {% block content %}
-  
-        <a class="container card" href="">
+    {% for quiz, f in looping %}
+        <a class="container card" href="{% url 'quest' quizID=quiz.id questID=f %}">
             <img class="quizImg" src="" alt="">
-            <h2 class="quizTitle">Title of the quiz</h2>
-
+            <h2 class="quizTitle">{{ quiz.name }}</h2>
             <div class="wrapper" style="margin: 0rem .25rem;">
                 <div class="container" style="flex: .5;">
                     <p class="label">Questions</p>
-                    <p class="meta">10</p>
+                    <p class="meta">{{ total }}</p>
                 </div>
-
                 <div class="container" style="flex: .5;">
                     <p class="label">Time limit</p>
                     <p class="meta">15</p>
                 </div>
             </div>
         </a>
-
+    {% endfor %}
     </div>
 {% endblock %}

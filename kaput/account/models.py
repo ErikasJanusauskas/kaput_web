@@ -4,7 +4,7 @@ from quiz.models import Questions
 import datetime
 # Create your models here.
 class Profile(models.Model):
-    user        = models.OneToOneField  (User, on_delete=models.CASCADE)
+    user        = models.ForeignKey     (User, on_delete=models.CASCADE)
     question    = models.ForeignKey     (Questions, blank=True, null=True, on_delete=models.CASCADE)
     answer      = models.IntegerField   (null=True, blank=True)
     isMarked    = models.BooleanField   (default=False)
