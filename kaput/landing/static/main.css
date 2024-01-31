@@ -1,17 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
 
 
 :root {
-    --text: #081F26;
-    --text-secondary: #767D7F;
-    --background: #F5F4F3;
-    --primary: #F5F4F3;
-    --secondary: #081F26;
-    --border: #CCCDCF;
-    --ans1: #EF476F;
-    --ans2: #F66951;
-    --ans3: #E873D8;
-    --ans4: #60C7E6;
+    --text: hsl(213, 68%, 15%);
+    --text-muted: hsl(9, 9%, 38%);
+    --bg: hsl(39, 9%, 96%);
+    --primary: hsl(0, 0%, 100%);
+    --border: hsl(220, 3%, 81%);
+    --ans1: hsl(346, 84%, 61%);
+    --ans2: hsl(9, 90%, 64%);
+    --ans3: hsl(308, 72%, 68%);
+    --ans4: hsl(194, 73%, 64%);
+
+    /* sizes */
+    --px8: .5rem;
+    --px24: 1.5rem;
 }
 
 
@@ -21,24 +24,39 @@
 
     border: none;
 
-    font-family: 'Poppins', sans-serif;
     text-decoration: none;
+
+    font-family: 'IBM Plex Sans', sans-serif;
+
+    color: var(--text);
 }
 
 
 body {
-    max-width: 1256px;
-    margin: 0rem auto;
 
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    background: var(--bg);
+
+    display: grid;
+    grid-template-columns: minmax(256px, 1256px);
+    justify-content: center;
 }
 
+
 nav {
-    margin-top: 1rem;
+    padding: var(--px24) 0;
+
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+}
+
+.navBtnCon {
+    gap: 1rem;
+    align-items: center;
+}
+
+.navBtn {
+    font-size: 14px;
+    font-weight: 500;
 }
 
 
@@ -46,7 +64,6 @@ nav {
     display: flex;
     flex-direction: column;
 }
-
 
 .wrapper {
     display: flex;

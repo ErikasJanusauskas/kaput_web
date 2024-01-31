@@ -1,68 +1,58 @@
 header {
-    margin: 1rem 0rem;
+    padding: var(--px8) var(--px24);
+    border-radius: var(--px24);
 
-    display: flex;
-    justify-content: center;
+    background: rgb(239,71,111);
+    background: linear-gradient(
+        90deg, 
+        rgba(239,71,111,1) 0%, 
+        rgba(246,105,81,1) 33%,
+        rgba(232,115,216,1) 66%, 
+        rgba(96,199,230,1) 100%
+    );
+}
+
+header h4 {
+    text-align: center;
+
+    font-size: 18px;
+
+    color: var(--bg);
 }
 
 
-.pageTitle {
-    gap: .4rem;
-}
+.landingCardFeed {
+    padding: var(--px24) 0;
 
-
-h1 {
-    font-size: 24px;
-    font-weight: 700;
-}
-
-.quiz {
-    font-size: 24px;
-    font-weight: 700;
-}
-
-.feed {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
+    gap: var(--px24);
 }
+
 
 .card {
-    flex: .25;
-    padding: .5rem;
-    border-radius: .8rem;
-    border: .063rem solid var(--border);
+    gap: var(--px24);
 }
 
-.card:hover {
+.card_title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.card_img {
+    aspect-ratio: 16/9;
+    width: 100%;
+    border-radius: 1rem;
+    border: 1px solid var(--primary);
+
     background: var(--primary);
 }
 
-
-.quizImg {
-    aspect-ratio: 16/9;
-    border-radius: .5rem;
-
-    background: #081F26;
+.card_meta_con {
+    gap: var(--px8);
 }
 
-
-.quizTitle {
-    margin: .5rem .25rem;
-    height: 3rem;
-
-    font-size: 1rem;
-    color: var(--text);
-}
-
-
-.label {
-    font-size: 12px;
-    color: var(--text-secondary);
-}
-
-
-.meta {
-    font-size: 14px;
-    color: var(--text);
+.card_meta {
+    font-size: 13px;
+    color: var(--text-muted);
 }

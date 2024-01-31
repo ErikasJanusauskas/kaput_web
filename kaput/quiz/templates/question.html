@@ -1,49 +1,44 @@
 {% extends 'base.html' %}
 
-
-{% block header %}
-
-        <h4>{{ quizName }}</h4>
-
+{% block style %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'quiz.css' %}">
 {% endblock %}
 
 
 {% block content %}
+    <form action="{% url 'quest' quizID=quiz.id questID=next %}" id="answers" method="post">
+        {% csrf_token %}
 
-    <!-- main div hold everything about the quiz controller togheter -->
-    <div class="quizController">
+        <img class="quiz_img" src="" alt="">
 
-        <img class="quizImg" src="" alt="">
-
-        <form class="quetion_and_answer_container" action="{% url 'quest' quizID=quiz.id questID=next %}" id="answers" method="post">
-            {% csrf_token %}
-
-            <div class="question">
+        <div class="quiz_main_con">
+            <div class="quiz_question_block">
                 <p>{{ quest.name }}</p>
             </div>
 
-            <label class="answer ans1" href="">{{ quest.answer_1 }}<input type="radio" name="answer" id="" value="1"> </label>
-            <label class="answer ans2" href="">{{ quest.answer_2 }}<input type="radio" name="answer" id="" value="2"> </label>
-            <label class="answer ans3" href="">{{ quest.answer_3 }}<input type="radio" name="answer" id="" value="3"> </label>
-            <label class="answer ans4" href="">{{ quest.answer_4 }}<input type="radio" name="answer" id="" value="4"> </label>
+            <label class="wrapper ans ans1" href=""><input type="radio" name="answer" id="" value="1">{{ quest.answer_1 }}</label>
+            <label class="wrapper ans ans2" href=""><input type="radio" name="answer" id="" value="2">{{ quest.answer_2 }}</label>
+            <label class="wrapper ans ans3" href=""><input type="radio" name="answer" id="" value="3">{{ quest.answer_3 }}</label>
+            <label class="wrapper ans ans4" href=""><input type="radio" name="answer" id="" value="4">{{ quest.answer_4 }}</label>
+        </div>
 
-            <div class="wrapper">
-                {% if not quest.id == 1 %}
-                <a href="{% url 'quest' quizID=quiz.id questID=previous %}">back</a>
-                {% endif %}
-                    <label class="btn ctrlBtn" href=""><input type="submit" value="next"></label>
-            </div>
-        </form>
+        <div class="wrapper quiz_tool_con">
+            <a class="quiz_tool_btn" href="">View all questions</a>
 
-        <div class="wrapper quizMeta">
-            <a href="">View all questions</a>
+            <hr>
 
-            <div class="wrapper">
+            <div class="wrapper quiz_meta_con">
                 <p>43/64</p>
                 <p>35min</p>
             </div>
         </div>
 
-    </div>
-
+        <div class="wrapper quiz_controll_con">
+            {% if not quest.id == 1 %}
+            <a class="quiz_controll_btn" href="{% url 'quest' quizID=quiz.id questID=previous %}">back</a>
+            {% endif %}
+            <label class="quiz_controll_btn" href=""><input type="submit" value="next"></label>
+        </div>
+    </form>
 {% endblock %}

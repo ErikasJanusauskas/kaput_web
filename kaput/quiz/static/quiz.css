@@ -1,34 +1,136 @@
-.quizController {
+form {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: max-content 1fr;
-    /* gap: 8px; */
+    grid-template-rows: 1fr max-content;
+    gap: var(--px8);
 }
 
 
-.quizImg {
+.quiz_img {
     grid-column: 1;
+    grid-row: 1;
 
     aspect-ratio: 4/3;
     width: 100%;
+
+    border-radius: 1rem;
+    border: 1px solid var(--border);
+
+    box-sizing: border-box;
 }
 
-
-.quetion_and_answer_container {
+.quiz_main_con {
     grid-column: 2 /span 2;
 
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
+    gap: var(--px8);
 }
 
-
-.question {
+.quiz_question_block {
     grid-column: 1 /span 2;
+
+    padding: var(--px24);
+    
+    border-radius: 1rem;
+    border: 1px solid var(--border);
+}
+
+.quiz_question_block p {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.ans {
+    padding: var(--px24);
+    border-radius: 1rem;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    align-items: center;
 }
 
 
-.quizMeta {
-    grid-column: 2/ span 2;
-    justify-content: space-between;
+.quiz_controll_con {
+    grid-column: 2 /span 2;
+    grid-row: 2;
+    gap: var(--px8);
+}
+
+.quiz_controll_btn {
+    flex: 1;
+    padding: var(--px8) var(--px24);
+
+    text-align: center;
+
+    font-size: 14px;
+
+    border-radius: 2rem;
+    border: 1px solid var(--border);
+}
+
+.quiz_controll_btn:hover {
+    cursor: pointer;
+}
+
+.quiz_controll_btn input {
+    font-size: 14px;
+    background: var(--bg);
+}
+
+.quiz_controll_btn input:hover {
+    cursor: pointer;
+}
+
+
+.quiz_tool_con {
+    grid-column: 1;
+    grid-row: 2;
+
+    padding: var(--px8) var(--px24);
+
+    font-size: 14px;
+
+    border-radius: 2rem;
+    border: 1px solid var(--border);
+
+    gap: 8px;
+}
+
+.quiz_tool_btn {
+    flex: 1;
+    text-align: center;
+}
+
+.quiz_tool_btn:hover {
+    border-radius: 4px;
+    background: hsl(220, 3%, 90%);
+}
+
+hr {
+    border-left: 1px solid var(--border);
+}
+
+.quiz_meta_con {
+    flex: 1;
+    gap: var(--px8);
+    justify-content: center;
+}
+
+
+
+
+.ans1 {
+    border: 1px solid var(--ans1);
+}
+.ans2 {
+    border: 1px solid var(--ans2);
+}
+.ans3 {
+    border: 1px solid var(--ans3);
+}
+.ans4 {
+    border: 1px solid var(--ans4);
 }
