@@ -3,7 +3,6 @@ from django.contrib.auth import authenticate, logout, login
 from django.contrib.auth.models import User
 from . models import *
 from quiz.models import Questions
-from django.http import HttpResponse # удалить после темплейтов
 
 def signup_page(request):
     error = None

@@ -15,27 +15,25 @@
 
         <img class="quizImg" src="" alt="">
 
-        <form class="quetion_and_answer_container" action="" id="answers">
+        <form class="quetion_and_answer_container" action="{% url 'quest' quizID=quiz.id questID=next %}" id="answers" method="post">
             {% csrf_token %}
 
             <div class="question">
-                <p>{{ quest }}</p>
+                <p>{{ quest.name }}</p>
             </div>
 
-            <label class="answer ans1" href="">{{ answer_1 }}<input type="radio" name="answer" id=""> </label>
-            <label class="answer ans2" href="">{{ answer_2 }}<input type="radio" name="answer" id=""> </label>
-            <label class="answer ans3" href="">{{ answer_3 }}<input type="radio" name="answer" id=""> </label>
-            <label class="answer ans4" href="">{{ answer_4 }}<input type="radio" name="answer" id=""> </label>
+            <label class="answer ans1" href="">{{ quest.answer_1 }}<input type="radio" name="answer" id="" value="1"> </label>
+            <label class="answer ans2" href="">{{ quest.answer_2 }}<input type="radio" name="answer" id="" value="2"> </label>
+            <label class="answer ans3" href="">{{ quest.answer_3 }}<input type="radio" name="answer" id="" value="3"> </label>
+            <label class="answer ans4" href="">{{ quest.answer_4 }}<input type="radio" name="answer" id="" value="4"> </label>
+
+            <div class="wrapper">
+                {% if not quest.id == 1 %}
+                <a href="{% url 'quest' quizID=quiz.id questID=previous %}">back</a>
+                {% endif %}
+                    <label class="btn ctrlBtn" href=""><input type="submit" value="next"></label>
+            </div>
         </form>
-
-        <div class="wrapper">
-            <a href="">back</a>
-
-            <form action="">
-                <label class="btn ctrlBtn" href="">mark <input type="checkbox" value="qid"></label>
-                <label class="btn ctrlBtn" href=""><input type="submit" value="next"></label>
-            </form>
-        </div>
 
         <div class="wrapper quizMeta">
             <a href="">View all questions</a>
