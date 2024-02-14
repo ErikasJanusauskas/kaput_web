@@ -30,7 +30,6 @@ def signup_page(request):
 
 def login_user(request):
     error = None
-    user = request.user
     if request.method == "POST":
         username = request.POST.get("username")
         password = request.POST.get("password")
@@ -56,20 +55,20 @@ def profile(request):
     else:
         return redirect("login_user")
 
-def answer(request, userID, questionID):
+def answer(request, userID, profileID):
     ## FOR ERIKAS 2
     user = request.user
     if user.is_authenticated:
-        question = Profile.objects.get(user=userID, question=questionID)
-        quizQuestion = Questions.objects.get(id=questionID)
-        if question.answer == 1:
-            question.answer = quizQuestion.answer_1
-        if question.answer == 2:
-            question.answer = quizQuestion.answer_2
-        if question.answer == 3:
-            question.answer = quizQuestion.answer_3
-        if question.answer == 4:
-            question.answer = quizQuestion.answer_4
+        questions = Profile.objects.get(id=profileID)
+        quizQuestion = Questions.objects.get(id=questions.question.id)
+        if questions.answer == 1:
+            questions.answer = quizQuestion.answer_1
+        if questions.answer == 2:
+            questions.answer = quizQuestion.answer_2
+        if questions.answer == 3:
+            questions.answer = quizQuestion.answer_3
+        if questions.answer == 4:
+            questions.answer = quizQuestion.answer_4
 
         if quizQuestion.answer_r == 1:
             quizQuestion.answer_r = quizQuestion.answer_1
@@ -79,7 +78,7 @@ def answer(request, userID, questionID):
             quizQuestion.answer_r = quizQuestion.answer_3
         if quizQuestion.answer_r == 4:
             quizQuestion.answer_r = quizQuestion.answer_4
-        context = {"question":question, "quizQuestion":quizQuestion}
+        context = {"question":questions, "quizQuestion":quizQuestion}
         return render(request, "answers.html", context)
     else:
         return redirect("login_user")

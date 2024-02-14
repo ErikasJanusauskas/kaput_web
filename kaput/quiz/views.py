@@ -20,14 +20,17 @@ def quest(request, quizID, questID):
                 Profile.objects.create(user=user, question=question, answer=user_answer)
             else:
                 return redirect("quest", quizID=quizID,  questID=questID-1)
-        quiz  = Quizzes.objects.get(id=quizID)
-        quest = Questions.objects.get(id=questID)
-        context = {
+        try:
+            quiz  = Quizzes.objects.get(id=quizID)
+            quest = Questions.objects.get(id=questID)
+            context = {
             "quiz": quiz,
             "quest":quest,
             "previous":quest.id-1,
             "next":quest.id+1
         }
+        except:
+            return redirect("profile")
     else:
         return redirect("login_user")
     return render(request, 'question.html', context)
