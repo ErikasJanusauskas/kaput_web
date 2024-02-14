@@ -16,7 +16,8 @@ def quest(request, quizID, questID):
             user_answer = request.POST.get("answer")
             print(user_answer)
             if user_answer != None:
-                user_answer = Profile()
+                question = Questions.objects.get(id=(questID-1))
+                Profile.objects.create(user=user, question=question, answer=user_answer)
             else:
                 return redirect("quest", quizID=quizID,  questID=questID-1)
         quiz  = Quizzes.objects.get(id=quizID)
@@ -28,5 +29,5 @@ def quest(request, quizID, questID):
             "next":quest.id+1
         }
     else:
-        return redirect("login_page")
+        return redirect("login_user")
     return render(request, 'question.html', context)
